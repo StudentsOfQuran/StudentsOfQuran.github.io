@@ -18,6 +18,14 @@
   }
 }
 
+h1,
+h2,
+h3,
+.display-1,
+.lead {
+  font-weight: bold;
+}
+
 h1 {
   text-align: center;
   animation: h1slide 1.5s ease-in-out;
@@ -27,7 +35,8 @@ h2 {
   animation: h2slide 1.5s ease-in-out;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
 }
 
@@ -38,21 +47,38 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-a {
+nav {
+  height: 4rem;
+}
+
+.btn {
+  background: linear-gradient(to right, blue, purple, blue);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  color: white;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.btn:hover {
+  color: white;
+  background-position: 0 0;
+}
+
+a:not(.btn, .d-block) {
   text-decoration: none;
   position: relative;
 }
 
-a::after {
+a:not(.btn, .d-block)::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;
+  height: 0.125rem;
   background-color: currentcolor;
   transition: width 0.3s ease-in-out;
 }
@@ -63,11 +89,15 @@ a:hover::after {
 
 img {
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 img:hover {
-  cursor: pointer;
   transform: scale(1.2);
+}
+
+table {
+  cursor: pointer;
 }
 
 ol[class="breadcrumb"] {
@@ -75,7 +105,7 @@ ol[class="breadcrumb"] {
 }
 
 .text-arabic {
-  font-family: 'Amiri', sans-serif;
+  font-family: "Amiri", sans-serif;
   direction: rtl;
   unicode-bidi: isolate;
 }
@@ -90,10 +120,4 @@ ol[class="breadcrumb"] {
 
 .text-first-color {
   color: #31473a;
-}
-
-#scroll_progress {
-  width: 0;
-  height: 5px;
-  background-color: #0d6efd;
 }
